@@ -140,11 +140,5 @@ namespace FrankensteinHero
                 return false;
             }
         }
-        [HarmonyPatch(typeof(Ability), nameof(Ability.Activate))]
-        [HarmonyPostfix]
-        private static void Ability_Activate(Ability __instance)
-        {
-            InGame.instance.SpawnBloons(ModContent.BloonID<FRANKENBLOON>(), 1, 0);
-        }
     }
 }
