@@ -206,7 +206,7 @@ namespace FrankensteinHerolevels
             towerModel.ApplyDisplay<FrankensteinHeroDisplays.lvl7>();
 
             AttackModel[] abilitystat = { Game.instance.model.GetTowerFromId("DartMonkey").GetBehavior<AttackModel>().Duplicate() };
-            var Ability1 = Game.instance.model.GetTowerFromId("Mermonkey-040").GetAbility().Duplicate();
+            var Ability1 = Game.instance.model.GetTowerFromId("BombShooter-040").GetAbility().Duplicate();
             var splosion = Game.instance.model.GetTowerFromId("MonkeySub-040").GetAbility().GetBehavior<ActivateAttackModel>().attacks[0].weapons[0].projectile.GetBehavior<CreateProjectileOnExpireModel>().Duplicate();
             splosion.projectile.GetDamageModel().damage = 12000;
             splosion.projectile.pierce = 700;
@@ -215,7 +215,7 @@ namespace FrankensteinHerolevels
             splosion.projectile.maxPierce = 750;
             abilitystat[0].range = 9999;
             abilitystat[0].weapons[0].projectile.RemoveFilter<FilterAllExceptTargetModel>();
-            abilitystat[0].weapons[0].Rate = 2f;
+            abilitystat[0].weapons[0].Rate = 269f;
             abilitystat[0].weapons[0].projectile.AddBehavior(new TrackTargetModel("TrackTargetModel_", 2000f, true, false, 180f, true, 360f, false, false));
             abilitystat[0].weapons[0].projectile.AddBehavior(splosion);
             var dupafx = Game.instance.model.GetTowerFromId("MonkeyAce-030").GetAttackModel(1).weapons[0].projectile.GetBehavior<CreateEffectOnExhaustFractionModel>().Duplicate();
